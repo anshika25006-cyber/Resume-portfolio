@@ -1,0 +1,152 @@
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+/* --- Root Color Variables --- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --card-hover-bg: rgba(255, 255, 255, 0.09);
+  
+  --accent-pink: #ec4899;
+  --accent-purple: #a855f7;
+  --accent-blue: #3b82f6;
+  --accent-teal: #14b8a6;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-highlight: #38bdf8;
+}
+
+/* --- Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Header & Profile Styling --- */
+header, .header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header img, .header img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-purple);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ec4899, #a855f7, #3b82f6);
+
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+/* --- Section Formatting --- */
+section, .section {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+section:hover, .section:hover {
+  transform: translateY(-4px);
+  background: var(--card-hover-bg);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: none; /* Removes standard hr lines */
+}
+
+/* Decorate Section Titles */
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 22px;
+  background: linear-gradient(to bottom, var(--accent-pink), var(--accent-purple));
+  border-radius: 4px;
+}
+
+/* --- Lists & Content --- */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+/* Glowing Custom Bullet Indicators */
+li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-teal);
+  font-size: 0.9rem;
+  text-shadow: 0 0 8px rgba(20, 184, 166, 0.6);
+}
+
+/* Highlighting Specific Details */
+li strong, li b {
+  color: var(--text-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Qualification Highlight Accent */
+li:nth-child(1)::before { color: var(--accent-pink); text-shadow: 0 0 8px rgba(236, 72, 153, 0.6); }
+li:nth-child(2)::before { color: var(--accent-purple); text-shadow: 0 0 8px rgba(168, 85, 247, 0.6); }
+li:nth-child(3)::before { color: var(--accent-blue); text-shadow: 0 0 8px rgba(59, 130, 246, 0.6); }
+
+/* --- Horizontal Dividers Removal --- */
+hr {
+  display: none; /* Replaced plain lines with subtle spacing */
+}
